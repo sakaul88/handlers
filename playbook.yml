@@ -1,6 +1,8 @@
 - hosts: all
   become: true
   tasks:
-   - copy:
-        content: "hello world"
-        dest: /tmp/abc.txt
+    - name: Generate a basic homepage from jinja2 template
+      copy:
+        src: alias.conf
+        dest: /var/www/html/index.html
+        force: yes
